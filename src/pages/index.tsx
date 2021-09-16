@@ -6,6 +6,7 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { SectionAbout } from '@/components/section/SectionAbout'
 import { SectionHistory } from '@/components/section/SectionHistory'
+import { SectionContact } from '@/components/section/SectionContact'
 
 const HomePage: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage: NextPage = () => {
         <article css={article}>
           <SectionAbout />
           <SectionHistory />
+          <SectionContact />
         </article>
       </main>
       <Footer />
