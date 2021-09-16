@@ -5,6 +5,7 @@ import { breakpoints, fonts } from '@/styles/settings'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { SectionAbout } from '@/components/section/SectionAbout'
+import { SectionHistory } from '@/components/section/SectionHistory'
 
 const HomePage: NextPage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage: NextPage = () => {
       <main>
         <article css={article}>
           <SectionAbout />
+          <SectionHistory />
         </article>
       </main>
       <Footer />
