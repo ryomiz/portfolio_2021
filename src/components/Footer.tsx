@@ -17,5 +17,4 @@ const footer = css`
 const copyright = css`
   font-family: ${fonts.libre};
   font-size: 1.2rem;
-  letter-spacing: 0.1em;
 `

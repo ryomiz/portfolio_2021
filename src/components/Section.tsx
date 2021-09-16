@@ -19,6 +19,5 @@ const headline = css`
   margin-bottom: 80px;
   font-size: clamp(2.4rem, 2.22vw, 4rem);
   font-weight: 300;
-  letter-spacing: 0.1em;
   text-align: center;
 `

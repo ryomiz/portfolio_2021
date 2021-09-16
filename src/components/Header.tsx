@@ -46,7 +46,6 @@ const title = css`
   font-family: ${fonts.libre};
   font-size: 1.8rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
 `
 
 const nav = css`
@@ -63,6 +62,5 @@ const list = css`
     align-items: center;
     font-family: ${fonts.libre};
     font-size: 1.5rem;
-    letter-spacing: 0.1em;
   }
 `
