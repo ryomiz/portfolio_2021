@@ -5,8 +5,10 @@ export const breakpoints = {
 
 // colors
 export const colors = {
+  black: '#333',
   crimson: '#dc143c',
   grey: '#ddd',
+  darkgrey: '#999',
 }
 
 // fonts
