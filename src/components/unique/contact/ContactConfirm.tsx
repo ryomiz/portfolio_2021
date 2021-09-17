@@ -8,31 +8,12 @@ import { PrimaryButton } from '@/components/general/buttons/PrimaryButton'
 
 // styles
 import { fields, label } from '@/components/section/SectionContact'
+import { useSendMail } from '@/hooks/useSendMail'
 
 export const ContactConfirm: React.VFC = () => {
   const { confirmValues } = useSetConfirmValues()
   const { switchFormState } = useSwitchFormState()
-
-  const sendMail = async (values: FormValues) => {
-    try {
-      const res = await fetch('/api/sendMail', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      })
-      if (res.status === 200) {
-        switchFormState('complete')
-      } else {
-        switchFormState('error')
-      }
-    } catch (err) {
-      console.error(err)
-      switchFormState('error')
-    }
-  }
+  const sendMail = useSendMail(confirmValues)
   return (
     <>
       <div css={fields}>
