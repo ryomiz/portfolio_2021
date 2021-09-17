@@ -3,3 +3,5 @@ export type FormValues = {
   email: string
   message: string
 }
+
+export type FormState = 'input' | 'confirm' | 'complete' | 'error'
