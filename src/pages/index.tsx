@@ -1,14 +1,18 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 import { css } from '@emotion/react'
 
-import { breakpoints, fonts } from '@/styles/settings'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { SectionAbout } from '@/components/section/SectionAbout'
 import { SectionHistory } from '@/components/section/SectionHistory'
+import { SectionWorks } from '@/components/section/SectionWorks'
 import { SectionContact } from '@/components/section/SectionContact'
 
-const HomePage: NextPage = () => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>
+
+const HomePage: NextPage<Props> = (props) => {
+  const { data } = props
+  console.log(data)
   return (
     <>
       <Header />
@@ -16,6 +20,7 @@ const HomePage: NextPage = () => {
         <article css={article}>
           <SectionAbout />
           <SectionHistory />
+          <SectionWorks data={data} />
           <SectionContact />
         </article>
       </main>
@@ -36,3 +41,14 @@ const article = css`
   margin: 0 auto;
   gap: 240px;
 `
+
+import json from 'src/data.json'
+
+// GetStaticProps
+export const getStaticProps: GetStaticProps = async () => {
+  const data = json
+
+  return {
+    props: { data },
+  }
+}
