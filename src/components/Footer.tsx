@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+
 import { fonts } from '@/styles/settings'
 
 export const Footer: React.VFC = () => {

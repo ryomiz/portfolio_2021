@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 
 import { Section } from '@/components/Section'
-import { WorkItem } from '@/components/unique/works/WorkItem'
+// import { WorkItem } from '@/components/unique/works/WorkItem'
 
 type Props = {
   data: Array<{ workTitle: string; src: string }>
@@ -12,9 +12,9 @@ export const SectionWorks: React.VFC<Props> = (props) => {
   return (
     <Section title="Works">
       <div css={grid}>
-        {data.map((item) => (
+        {/* {data.map((item) => (
           <WorkItem key={item.workTitle} data={item} />
-        ))}
+        ))} */}
       </div>
     </Section>
   )
