@@ -1,0 +1,40 @@
+import { css } from '@emotion/react'
+
+import { Layout } from '@/components/layout/Layout'
+import { SectionAbout } from '@/components/unique/index/section/SectionAbout'
+import { SectionContact } from '@/components/unique/index/section/SectionContact'
+import { SectionHistory } from '@/components/unique/index/section/SectionHistory'
+import { SectionWorks } from '@/components/unique/index/section/SectionWorks'
+
+type Props = {
+  data: any
+}
+
+export const AssetsIndex: React.VFC<Props> = (props) => {
+  const { data } = props
+  console.log(data)
+  return (
+    <>
+      <Layout>
+        <main>
+          <article css={article}>
+            <SectionAbout />
+            <SectionHistory />
+            <SectionWorks data={data} />
+            <SectionContact />
+          </article>
+        </main>
+      </Layout>
+    </>
+  )
+}
+const article = css`
+  display: flex;
+  max-width: 950px;
+  flex-direction: column;
+  padding: 0 25px;
+  padding-top: 200px;
+  padding-bottom: 120px;
+  margin: 0 auto;
+  gap: 240px;
+`

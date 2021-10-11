@@ -1,11 +1,16 @@
 import { useSwitchFormState } from './useSwitchFormState'
-import { FormValues } from '@/types/types'
 
-export const useSendMail = (values: FormValues) => {
+import { FormValues } from '@/types'
+
+type ReturnValue = {
+  sendMail: (arg: FormValues) => Promise<void>
+}
+
+export const useSendMail = (): ReturnValue => {
   const { switchFormState } = useSwitchFormState()
 
   // メールの送信処理
-  const sendMail = async (values: FormValues) => {
+  const sendMail = async (values: FormValues): Promise<void> => {
     try {
       const res = await fetch('/api/sendMail', {
         method: 'POST',
@@ -25,5 +30,5 @@ export const useSendMail = (values: FormValues) => {
       switchFormState('error')
     }
   }
-  return sendMail
+  return { sendMail }
 }
