@@ -5,7 +5,7 @@ type Props = {
   children: React.ReactNode
 }
 
-export const Section: React.VFC<Props> = (props) => {
+export const Section: React.FC<Props> = (props) => {
   const { title, children } = props
   return (
     <section>

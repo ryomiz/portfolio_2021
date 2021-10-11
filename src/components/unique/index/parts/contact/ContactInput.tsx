@@ -1,15 +1,18 @@
 import { css } from '@emotion/react'
 import { useForm } from 'react-hook-form'
 
-import { useSetConfirmValues } from '@/hooks/useSetConfirmValues'
 import { useSwitchFormState } from '@/hooks/useSwitchFormState'
-import type { FormValues } from '@/types/types'
+import type { FormValues } from '@/types'
 
 import { PrimaryButton } from '@/components/general/buttons/PrimaryButton'
 
-// styles
-import { colors } from '@/styles/settings'
-import { fields, label, input } from '@/components/section/SectionContact'
+import { colors } from '@/styles'
+import {
+  fields,
+  label,
+  input,
+} from '@/components/unique/index/section/SectionContact'
+import { useFormValues } from '@/hooks/useFormValues'
 
 export const ContactInput: React.VFC = () => {
   const {
@@ -18,11 +21,11 @@ export const ContactInput: React.VFC = () => {
     formState: { errors },
   } = useForm<FormValues>()
 
-  const { confirmValues, setConfirmValues } = useSetConfirmValues()
+  const { formValues, setFormValues } = useFormValues()
 
   const { switchFormState } = useSwitchFormState()
   const onSubmit = (values: FormValues) => {
-    setConfirmValues(values)
+    setFormValues(values)
     switchFormState('confirm')
   }
 
@@ -37,7 +40,7 @@ export const ContactInput: React.VFC = () => {
             css={input}
             id="name"
             type="text"
-            defaultValue={confirmValues.name}
+            defaultValue={formValues.name}
             {...register('name', { required: true })}
           />
           {errors.name ? (
@@ -54,7 +57,7 @@ export const ContactInput: React.VFC = () => {
             css={input}
             id="email"
             type="text"
-            defaultValue={confirmValues.email}
+            defaultValue={formValues.email}
             {...register('email', { required: true })}
           />
           {errors.email ? (
@@ -70,7 +73,7 @@ export const ContactInput: React.VFC = () => {
           <textarea
             css={input}
             id="message"
-            defaultValue={confirmValues.message}
+            defaultValue={formValues.message}
             data-textarea={true}
             {...register('message', { required: true })}
           />

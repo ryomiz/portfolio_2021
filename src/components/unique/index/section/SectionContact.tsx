@@ -1,14 +1,11 @@
 import { css } from '@emotion/react'
 
+import { Section } from '@/components/layout/Section'
+import { ContactConfirm } from '@/components/unique/index/parts/contact/ContactConfirm'
+import { ContactInput } from '@/components/unique/index/parts/contact/ContactInput'
+import { ContactSubmitResult } from '@/components/unique/index/parts/contact/ContactSubmitResult'
 import { useSwitchFormState } from '@/hooks/useSwitchFormState'
-
-import { Section } from '@/components/Section'
-import { ContactInput } from '@/components/unique/contact/ContactInput'
-import { ContactConfirm } from '@/components/unique/contact/ContactConfirm'
-import { ContactSubmitResult } from '@/components/unique/contact/ContactSubmitResult'
-
-import { colors } from '@/styles/settings'
-
+import { colors } from '@/styles'
 export const SectionContact: React.VFC = () => {
   const { form } = useSwitchFormState()
   return (

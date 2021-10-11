@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-import { fonts } from '@/styles/settings'
+import { fonts } from '@/styles'
 
 export const Footer: React.VFC = () => {
   return (

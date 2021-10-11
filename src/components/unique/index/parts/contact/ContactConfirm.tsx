@@ -1,19 +1,19 @@
 import { css } from '@emotion/react'
 
-import { useSetConfirmValues } from '@/hooks/useSetConfirmValues'
 import { useSwitchFormState } from '@/hooks/useSwitchFormState'
-import { FormValues } from '@/types/types'
+import { FormValues } from '@/types'
 
 import { PrimaryButton } from '@/components/general/buttons/PrimaryButton'
 
 // styles
-import { fields, label } from '@/components/section/SectionContact'
+import { fields, label } from '@/components/unique/index/section/SectionContact'
 import { useSendMail } from '@/hooks/useSendMail'
+import { useFormValues } from '@/hooks/useFormValues'
 
 export const ContactConfirm: React.VFC = () => {
-  const { confirmValues } = useSetConfirmValues()
+  const { formValues } = useFormValues()
   const { switchFormState } = useSwitchFormState()
-  const sendMail = useSendMail(confirmValues)
+  const { sendMail } = useSendMail()
   return (
     <>
       <div css={fields}>
@@ -21,19 +21,19 @@ export const ContactConfirm: React.VFC = () => {
           <li css={label} data-nostar={true}>
             Name
           </li>
-          <li css={inputVal}>{confirmValues.name}</li>
+          <li css={inputVal}>{formValues.name}</li>
         </ul>
         <ul>
           <li css={label} data-nostar={true}>
             Email
           </li>
-          <li css={inputVal}>{confirmValues.email}</li>
+          <li css={inputVal}>{formValues.email}</li>
         </ul>
         <ul>
           <li css={label} data-nostar={true}>
             Message
           </li>
-          <li css={textVal}>{confirmValues.message}</li>
+          <li css={textVal}>{formValues.message}</li>
         </ul>
       </div>
       <ul css={buttons}>
@@ -43,7 +43,7 @@ export const ContactConfirm: React.VFC = () => {
           </PrimaryButton>
         </li>
         <li>
-          <PrimaryButton active={true} onClick={() => sendMail(confirmValues)}>
+          <PrimaryButton active={true} onClick={() => sendMail(formValues)}>
             Submit
           </PrimaryButton>
         </li>

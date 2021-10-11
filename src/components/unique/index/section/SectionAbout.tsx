@@ -1,8 +1,7 @@
-import Image from 'next/image'
 import { css } from '@emotion/react'
+import Image from 'next/image'
 
-import { Section } from '@/components/Section'
-
+import { Section } from '@/components/layout/Section'
 import profile from 'public/images/profile.jpg'
 
 export const SectionAbout: React.VFC = () => {

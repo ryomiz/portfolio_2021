@@ -1,6 +1,6 @@
 import { atom } from 'recoil'
 
-import { FormState, FormValues } from '@/types/types'
+import { FormState, FormValues } from '@/types'
 
 export const formState = atom<FormState>({
   key: 'formState',

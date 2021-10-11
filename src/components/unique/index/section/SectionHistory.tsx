@@ -1,8 +1,7 @@
-import Image from 'next/image'
 import { css } from '@emotion/react'
+import Image from 'next/image'
 
-import { Section } from '@/components/Section'
-
+import { Section } from '@/components/layout/Section'
 import history from 'public/images/history.jpg'
 
 export const SectionHistory: React.VFC = () => {

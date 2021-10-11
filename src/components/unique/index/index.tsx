@@ -1,11 +1,10 @@
 import { css } from '@emotion/react'
 
-import { Footer } from '@/components/Footer'
-import { Header } from '@/components/Header'
-import { SectionAbout } from '@/components/section/SectionAbout'
-import { SectionContact } from '@/components/section/SectionContact'
-import { SectionHistory } from '@/components/section/SectionHistory'
-import { SectionWorks } from '@/components/section/SectionWorks'
+import { Layout } from '@/components/layout/Layout'
+import { SectionAbout } from '@/components/unique/index/section/SectionAbout'
+import { SectionContact } from '@/components/unique/index/section/SectionContact'
+import { SectionHistory } from '@/components/unique/index/section/SectionHistory'
+import { SectionWorks } from '@/components/unique/index/section/SectionWorks'
 
 type Props = {
   data: any
@@ -16,16 +15,16 @@ export const AssetsIndex: React.VFC<Props> = (props) => {
   console.log(data)
   return (
     <>
-      <Header />
-      <main>
-        <article css={article}>
-          <SectionAbout />
-          <SectionHistory />
-          <SectionWorks data={data} />
-          <SectionContact />
-        </article>
-      </main>
-      <Footer />
+      <Layout>
+        <main>
+          <article css={article}>
+            <SectionAbout />
+            <SectionHistory />
+            <SectionWorks data={data} />
+            <SectionContact />
+          </article>
+        </main>
+      </Layout>
     </>
   )
 }

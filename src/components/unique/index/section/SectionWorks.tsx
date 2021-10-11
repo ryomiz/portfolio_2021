@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-import { Section } from '@/components/Section'
+import { Section } from '@/components/layout/Section'
 // import { WorkItem } from '@/components/unique/works/WorkItem'
 
 type Props = {

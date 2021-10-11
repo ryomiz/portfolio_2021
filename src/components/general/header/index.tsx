@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import { IoLogoFacebook, IoLogoGithub } from 'react-icons/io5'
 
-import { fonts } from '@/styles/settings'
+import { fonts } from '@/styles'
 
 export const Header: React.VFC = () => {
   return (
