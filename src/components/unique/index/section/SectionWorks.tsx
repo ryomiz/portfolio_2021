@@ -1,20 +1,29 @@
 import { css } from '@emotion/react'
 
 import { Section } from '@/components/layout/Section'
-// import { WorkItem } from '@/components/unique/works/WorkItem'
+import { WorkItem } from '@/components/unique/index/parts/works/WorkItem'
+import { Work } from '@/types'
 
 type Props = {
-  data: Array<{ workTitle: string; src: string }>
+  data: {
+    data: {
+      works: Array<Work>
+    }
+  }
 }
 
 export const SectionWorks: React.VFC<Props> = (props) => {
-  const { data } = props
+  const {
+    data: {
+      data: { works },
+    },
+  } = props
   return (
     <Section title="Works">
       <div css={grid}>
-        {/* {data.map((item) => (
-          <WorkItem key={item.workTitle} data={item} />
-        ))} */}
+        {works.map((item) => (
+          <WorkItem key={item.title} data={item} />
+        ))}
       </div>
     </Section>
   )

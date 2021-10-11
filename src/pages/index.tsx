@@ -1,10 +1,18 @@
 import axios from 'axios'
 
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 
 import { AssetsIndex } from '@/components/unique/index'
+import { Work } from '@/types'
+import { getWorksQuery } from '@/utils/query'
 
-type Props = InferGetStaticPropsType<typeof getStaticProps>
+type Props = {
+  data: {
+    data: {
+      works: Array<Work>
+    }
+  }
+}
 
 const HomePage: NextPage<Props> = (props) => {
   const { data } = props
@@ -19,15 +27,10 @@ export const getStaticProps: GetStaticProps = async () => {
     url: 'https://api-ap-northeast-1.graphcms.com/v2/cktsrakyp08hf01xpgte012py/master',
     method: 'POST',
     data: {
-      query: `query {
-        works {
-          title
-        }
-      }`,
+      query: getWorksQuery,
     },
   })
   const data = res.data
-
   return {
     props: { data },
   }

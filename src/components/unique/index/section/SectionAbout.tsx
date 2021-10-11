@@ -14,8 +14,6 @@ export const SectionAbout: React.VFC = () => {
             <p css={greeting}>
               広島県尾道市在住のマークアップエンジニア
               <br />
-              フロントエンド開発を勉強中
-              <br />
               好きな言語はTypeScriptです。
             </p>
           </div>

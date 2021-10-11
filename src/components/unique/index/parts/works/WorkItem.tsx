@@ -1,21 +1,20 @@
 import { css } from '@emotion/react'
 import Image from 'next/image'
 
+import type { Work } from '@/types'
+
 type Props = {
-  data: {
-    workTitle: string
-    src: string
-  }
+  data: Work
 }
 
 export const WorkItem: React.VFC<Props> = (props) => {
   const {
-    data: { workTitle, src },
+    data: { title, image },
   } = props
   return (
     <div css={container}>
-      <h3 css={title}>{workTitle}</h3>
-      <Image src={src} width={420} height={236} alt={workTitle} />
+      <h3 css={workTitle}>{title}</h3>
+      <Image src={image.url} width={420} height={236} alt={title} />
       {/* 作品詳細（モーダル実装） */}
     </div>
   )
@@ -27,7 +26,7 @@ const container = css`
   border: 1px solid #efefef;
 `
 
-const title = css`
+const workTitle = css`
   order: 2;
   font-size: 2rem;
   line-height: 64px;
