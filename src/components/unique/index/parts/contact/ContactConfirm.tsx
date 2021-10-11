@@ -1,41 +1,39 @@
 import { css } from '@emotion/react'
 
 import { useSwitchFormState } from '@/hooks/useSwitchFormState'
-import { FormValues } from '@/types'
 
 import { PrimaryButton } from '@/components/general/buttons/PrimaryButton'
 
 // styles
-import { fields, label } from '@/components/unique/index/section/SectionContact'
 import { useSendMail } from '@/hooks/useSendMail'
 import { useFormValues } from '@/hooks/useFormValues'
+import { Label } from '@/components/general/form/Label'
+import { Field } from '@/components/general/form/Field'
 
 export const ContactConfirm: React.VFC = () => {
   const { formValues } = useFormValues()
   const { switchFormState } = useSwitchFormState()
   const { sendMail } = useSendMail()
   return (
-    <>
-      <div css={fields}>
-        <ul>
-          <li css={label} data-nostar={true}>
-            Name
-          </li>
-          <li css={inputVal}>{formValues.name}</li>
-        </ul>
-        <ul>
-          <li css={label} data-nostar={true}>
-            Email
-          </li>
-          <li css={inputVal}>{formValues.email}</li>
-        </ul>
-        <ul>
-          <li css={label} data-nostar={true}>
-            Message
-          </li>
-          <li css={textVal}>{formValues.message}</li>
-        </ul>
-      </div>
+    <Field>
+      <ul>
+        <li>
+          <Label star={false}>Name</Label>
+        </li>
+        <li css={inputVal}>{formValues.name}</li>
+      </ul>
+      <ul>
+        <li>
+          <Label star={false}>Email</Label>
+        </li>
+        <li css={inputVal}>{formValues.email}</li>
+      </ul>
+      <ul>
+        <li>
+          <Label star={false}>Message</Label>
+        </li>
+        <li css={textVal}>{formValues.message}</li>
+      </ul>
       <ul css={buttons}>
         <li>
           <PrimaryButton onClick={() => switchFormState('input')}>
@@ -48,7 +46,7 @@ export const ContactConfirm: React.VFC = () => {
           </PrimaryButton>
         </li>
       </ul>
-    </>
+    </Field>
   )
 }
 

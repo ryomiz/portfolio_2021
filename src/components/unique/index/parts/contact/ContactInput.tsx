@@ -5,14 +5,11 @@ import { useSwitchFormState } from '@/hooks/useSwitchFormState'
 import type { FormValues } from '@/types'
 
 import { PrimaryButton } from '@/components/general/buttons/PrimaryButton'
-
-import { colors } from '@/styles'
-import {
-  fields,
-  label,
-  input,
-} from '@/components/unique/index/section/SectionContact'
 import { useFormValues } from '@/hooks/useFormValues'
+import { Label } from '@/components/general/form/Label'
+import { Input } from '@/components/general/form/Input'
+import { ErrorMessage } from '@/components/general/form/ErrorMessage'
+import { Field } from '@/components/general/form/Field'
 
 export const ContactInput: React.VFC = () => {
   const {
@@ -21,9 +18,10 @@ export const ContactInput: React.VFC = () => {
     formState: { errors },
   } = useForm<FormValues>()
 
-  const { formValues, setFormValues } = useFormValues()
+  const { setFormValues } = useFormValues()
 
   const { switchFormState } = useSwitchFormState()
+
   const onSubmit = (values: FormValues) => {
     setFormValues(values)
     switchFormState('confirm')
@@ -31,69 +29,35 @@ export const ContactInput: React.VFC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div css={fields}>
+      <Field>
         <div>
-          <label css={label} htmlFor="name">
-            Name
-          </label>
-          <input
-            css={input}
-            id="name"
-            type="text"
-            defaultValue={formValues.name}
-            {...register('name', { required: true })}
-          />
-          {errors.name ? (
-            <p css={alertMessage}>名前を入力してください。</p>
-          ) : (
-            <div css={spacer} />
-          )}
+          <Label htmlFor="name">Name</Label>
+          <Input id="name" type="text" register={register} />
+          {errors.name ? <ErrorMessage error={errors} /> : <div css={spacer} />}
         </div>
         <div>
-          <label css={label} htmlFor="email">
-            Email
-          </label>
-          <input
-            css={input}
-            id="email"
-            type="text"
-            defaultValue={formValues.email}
-            {...register('email', { required: true })}
-          />
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" type="text" register={register} />
           {errors.email ? (
-            <p css={alertMessage}>メールアドレスを入力してください。</p>
+            <ErrorMessage error={errors} />
           ) : (
             <div css={spacer} />
           )}
         </div>
         <div>
-          <label css={label} htmlFor="message">
-            Message
-          </label>
-          <textarea
-            css={input}
-            id="message"
-            defaultValue={formValues.message}
-            data-textarea={true}
-            {...register('message', { required: true })}
-          />
+          <Label htmlFor="message">Message</Label>
+          <Input id="message" type="text" register={register} />
           {errors.message ? (
-            <p css={alertMessage}>メッセージを入力してください。</p>
+            <ErrorMessage error={errors} />
           ) : (
             <div css={spacer} />
           )}
         </div>
-      </div>
+      </Field>
       <PrimaryButton type="submit">Confirm</PrimaryButton>
     </form>
   )
 }
-
-const alertMessage = css`
-  color: ${colors.crimson};
-  font-size: 1.2rem;
-  font-weight: 700;
-`
 
 const spacer = css`
   height: 17px;
