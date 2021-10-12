@@ -11,6 +11,11 @@ export type Work = {
   }
 }
 
+export type ModalState = {
+  open: boolean
+  modalIndex: number
+}
+
 export type FormValues = {
   name: string
   email: string

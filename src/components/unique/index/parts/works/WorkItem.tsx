@@ -1,23 +1,22 @@
 import { css } from '@emotion/react'
 import Image from 'next/image'
 
-import { WorkDetailModal } from './WorkDetailModal'
-
 import type { Work } from '@/types'
 
 import { useModal } from '@/hooks/useModal'
 
 type Props = {
   data: Work
+  index: number
 }
 
 export const WorkItem: React.VFC<Props> = (props) => {
-  const { data } = props
+  const { data, index } = props
   const { openModal } = useModal()
 
   return (
     <>
-      <div css={container} onClick={openModal}>
+      <div css={container} onClick={() => openModal(index)}>
         <div css={description}>
           <h3 css={workTitle}>{data.title}</h3>
           <button css={detail}>詳しく見る</button>
@@ -33,7 +32,6 @@ export const WorkItem: React.VFC<Props> = (props) => {
           </div>
         </div>
       </div>
-      <WorkDetailModal data={data} />
     </>
   )
 }

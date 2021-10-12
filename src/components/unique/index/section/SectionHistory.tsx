@@ -26,7 +26,7 @@ export const SectionHistory: React.VFC = () => {
           </li>
           <li>
             <span css={year}>同年</span>
-            株式会社プラスへマークアップエンジニアとして入社
+            マークアップエンジニアとして勤務開始
           </li>
         </ul>
         <div css={image}>
@@ -43,9 +43,11 @@ const container = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 100px;
 `
 
 const list = css`
+  flex: 1;
   order: 2;
 
   li {

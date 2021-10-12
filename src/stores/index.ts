@@ -1,6 +1,6 @@
 import { atom } from 'recoil'
 
-import { FormState, FormValues } from '@/types'
+import { FormState, FormValues, ModalState } from '@/types'
 
 export const formState = atom<FormState>({
   key: 'formState',
@@ -16,7 +16,10 @@ export const confirmValueState = atom<FormValues>({
   },
 })
 
-export const modalState = atom<boolean>({
+export const modalState = atom<ModalState>({
   key: 'modalState',
-  default: false,
+  default: {
+    open: false,
+    modalIndex: 0,
+  },
 })

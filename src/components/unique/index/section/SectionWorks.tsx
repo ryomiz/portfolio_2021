@@ -1,7 +1,10 @@
 import { css } from '@emotion/react'
 
+import { WorkDetailModal } from '../parts/works/WorkDetailModal'
+
 import { Section } from '@/components/layout/Section'
 import { WorkItem } from '@/components/unique/index/parts/works/WorkItem'
+import { useModal } from '@/hooks/useModal'
 import { Work } from '@/types'
 
 type Props = {
@@ -18,13 +21,19 @@ export const SectionWorks: React.VFC<Props> = (props) => {
       data: { works },
     },
   } = props
+
+  const {
+    modal: { modalIndex },
+  } = useModal()
+
   return (
     <Section title="Works">
       <div css={grid}>
-        {works.map((item) => (
-          <WorkItem key={item.title} data={item} />
+        {works.map((item, index: number) => (
+          <WorkItem key={item.title} data={item} index={index} />
         ))}
       </div>
+      <WorkDetailModal data={works[modalIndex]} />
     </Section>
   )
 }
