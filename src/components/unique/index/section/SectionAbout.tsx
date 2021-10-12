@@ -10,18 +10,18 @@ export const SectionAbout: React.VFC = () => {
       <div css={container}>
         <div css={contents}>
           <div>
-            <h3 css={myname}>水野 良祐&#040;Ryosuke Mizuno&#041;</h3>
+            <h3 css={myname}>水野 良祐&#040;Mizuno Ryosuke&#041;</h3>
             <p css={greeting}>
-              広島県尾道市を拠点にWeb制作を行っています。
+              広島県尾道市在住のマークアップエンジニア
               <br />
-              フロントエンド開発を勉強中です。
+              好きな言語はTypeScriptです。
             </p>
           </div>
           <div>
-            <h3 css={using}>使用中の技術</h3>
+            <h3 css={using}>学習中の技術</h3>
             <ul css={techs}>
               <li>JavaScript, TypeScript, React, Next.js,</li>
-              <li>Node.js, Express.js</li>
+              <li>Node.js, Express.js, Nest.js</li>
               <li>GraphQL</li>
             </ul>
           </div>
@@ -68,6 +68,7 @@ const techs = css`
 `
 
 const image = css`
+  max-width: 300px;
   padding-right: 30px;
   padding-bottom: 30px;
 `

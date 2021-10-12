@@ -1,5 +1,7 @@
 import { css } from '@emotion/react'
 
+import type { Work } from '@/types'
+
 import { Layout } from '@/components/layout/Layout'
 import { SectionAbout } from '@/components/unique/index/section/SectionAbout'
 import { SectionContact } from '@/components/unique/index/section/SectionContact'
@@ -7,12 +9,15 @@ import { SectionHistory } from '@/components/unique/index/section/SectionHistory
 import { SectionWorks } from '@/components/unique/index/section/SectionWorks'
 
 type Props = {
-  data: any
+  data: {
+    data: {
+      works: Array<Work>
+    }
+  }
 }
 
 export const AssetsIndex: React.VFC<Props> = (props) => {
   const { data } = props
-  console.log(data)
   return (
     <>
       <Layout>
@@ -36,5 +41,5 @@ const article = css`
   padding-top: 200px;
   padding-bottom: 120px;
   margin: 0 auto;
-  gap: 240px;
+  gap: 160px;
 `
