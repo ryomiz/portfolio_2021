@@ -1,5 +1,11 @@
 export type Work = {
   title: string
+  description: string
+  frontend: string
+  backend: string
+  others: string
+  url: string
+  repository: string
   image: {
     url: string
   }

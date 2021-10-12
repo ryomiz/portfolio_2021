@@ -2,13 +2,20 @@ import { css } from '@emotion/react'
 import Image from 'next/image'
 import { IoLogoGithub } from 'react-icons/io5'
 import Modal from 'react-responsive-modal'
+
+import type { Work } from '@/types'
+
+import { useModal } from '@/hooks/useModal'
+import { colors } from '@/styles'
+
 type Props = {
-  open: boolean
-  closeModal: () => void
+  data: Work
 }
 
-export const MyModal: React.VFC<Props> = (props) => {
-  const { open, closeModal } = props
+export const WorkDetailModal: React.VFC<Props> = (props) => {
+  const { data } = props
+  console.log(data)
+  const { open, closeModal } = useModal()
   return (
     <Modal
       open={open}
@@ -20,45 +27,39 @@ export const MyModal: React.VFC<Props> = (props) => {
     >
       <div css={modal}>
         <div css={contents}>
-          <strong css={title}>My Portfolio</strong>
-          <p css={description}>
-            ポートフォリオです。
-            <br />
-            ポートフォリオです。
-            <br />
-            ポートフォリオです。
-          </p>
+          <strong css={title}>{data.title}</strong>
+          <p css={description}>{data.description}</p>
           <h4 css={techs}>使用技術</h4>
           <dl css={list}>
             <div className="flex">
               <dt>フロントエンド</dt>
-              <dd>TypeScript, Next.js</dd>
+              <dd>{data.frontend}</dd>
             </div>
             <div className="flex">
               <dt>バックエンド</dt>
-              <dd>GraphCMS</dd>
+              <dd>{data.backend}</dd>
             </div>
             <div className="flex">
               <dt>その他</dt>
-              <dd>Node.js, GraphQL</dd>
+              <dd>{data.others}</dd>
             </div>
           </dl>
           <h4 css={link}>URL</h4>
           <div css={icons}>
-            <a href="#" target="_blank" rel="noopener">
-              http://localhost:3000/
+            <a href={data.url} target="_blank" rel="noopener noreferrer">
+              {data.url}
             </a>
-            <a href="#" target="_blank" rel="noopener">
+            <a href={data.repository} target="_blank" rel="noopener noreferrer">
               <IoLogoGithub size={30} />
             </a>
           </div>
         </div>
         <div css={image}>
           <Image
-            src="https://media.graphcms.com/CHgzbh0sQIa17tzapHSe"
-            width={420}
-            height={236}
-            alt="Hello"
+            src={data.image.url}
+            width={800}
+            height={800}
+            alt={data.title}
           />
         </div>
       </div>
@@ -71,8 +72,7 @@ const modal = css`
   width: 100%;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 20px;
-  padding-right: 30px;
+  padding: 30px;
 `
 
 const contents = css`
@@ -82,12 +82,13 @@ const contents = css`
 const title = css`
   display: inline-block;
   margin-bottom: 1em;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
 `
 
 const description = css`
   margin-bottom: 2em;
+  white-space: pre-line;
 `
 
 const techs = css`
@@ -119,10 +120,14 @@ const icons = css`
 
   a {
     display: flex;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 `
 
 const image = css`
   width: 40%;
-  max-width: 420px;
+  border: 2px solid ${colors.grey};
 `
