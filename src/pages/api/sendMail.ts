@@ -1,16 +1,19 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import nodemailer from 'nodemailer'
+import { createTransport } from 'nodemailer'
 
-import type { FormValues } from '@/types/types'
+import type { FormValues } from '@/types'
 
 const ADDRESS = process.env.EMAIL_ADDRESS || ''
 const PASSWORD = process.env.EMAIL_PASSWORD || ''
 
-const sendMail = async (req: NextApiRequest, res: NextApiResponse) => {
+const sendMail = async (
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> => {
   try {
     if (req.method === 'POST') {
       const data: FormValues = req.body
-      const transporter = nodemailer.createTransport({
+      const transporter = createTransport({
         host: 'smtp.mailtrap.io',
         port: 2525,
         auth: {
