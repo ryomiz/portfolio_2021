@@ -1,16 +1,27 @@
 import { useRecoilState } from 'recoil'
 
+import type { ModalState } from '@/types'
+
 import { modalState } from '@/stores'
 
 type ReturnValue = {
-  open: boolean
-  openModal: () => void
+  modal: ModalState
+  openModal: (idx: number) => void
   closeModal: () => void
 }
 
 export const useModal = (): ReturnValue => {
-  const [open, setOpen] = useRecoilState(modalState)
-  const openModal = () => setOpen(true)
-  const closeModal = () => setOpen(false)
-  return { open, openModal, closeModal }
+  const [modal, setModal] = useRecoilState(modalState)
+
+  const openModal = (idx: number) =>
+    setModal({
+      open: true,
+      modalIndex: idx,
+    })
+  const closeModal = () =>
+    setModal({
+      ...modal,
+      open: false,
+    })
+  return { modal, openModal, closeModal }
 }

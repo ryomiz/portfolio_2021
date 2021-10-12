@@ -18,6 +18,7 @@
   "plugins": ["@typescript-eslint", "import", "unused-imports"],
   "rules": {
     "unused-imports/no-unused-imports": "error",
+    "import/no-named-as-default": "off",
     "import/order": [
       "error",
       {

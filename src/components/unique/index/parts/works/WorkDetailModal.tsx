@@ -14,8 +14,11 @@ type Props = {
 
 export const WorkDetailModal: React.VFC<Props> = (props) => {
   const { data } = props
-  console.log(data)
-  const { open, closeModal } = useModal()
+  const {
+    modal: { open },
+    closeModal,
+  } = useModal()
+
   return (
     <Modal
       open={open}
@@ -128,6 +131,7 @@ const icons = css`
 `
 
 const image = css`
+  display: flex;
   width: 40%;
   border: 2px solid ${colors.grey};
 `
