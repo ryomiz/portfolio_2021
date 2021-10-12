@@ -19,9 +19,11 @@ export const ContactSubmitResult: React.VFC<Props> = (props) => {
 
 const container = css`
   display: flex;
-  height: 387px;
+  height: auto;
   align-items: center;
   justify-content: center;
+  animation: shrink;
+  animation-duration: 3s;
 `
 
 const result = css`

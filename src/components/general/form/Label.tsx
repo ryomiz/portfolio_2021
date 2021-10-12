@@ -1,5 +1,6 @@
-import { colors } from '@/styles'
 import { css } from '@emotion/react'
+
+import { colors } from '@/styles'
 
 type Props = {
   children: React.ReactNode

@@ -1,14 +1,11 @@
 import { css } from '@emotion/react'
 
-import { useSwitchFormState } from '@/hooks/useSwitchFormState'
-
 import { PrimaryButton } from '@/components/general/buttons/PrimaryButton'
-
-// styles
-import { useSendMail } from '@/hooks/useSendMail'
-import { useFormValues } from '@/hooks/useFormValues'
-import { Label } from '@/components/general/form/Label'
 import { Field } from '@/components/general/form/Field'
+import { Label } from '@/components/general/form/Label'
+import { useFormValues } from '@/hooks/useFormValues'
+import { useSendMail } from '@/hooks/useSendMail'
+import { useSwitchFormState } from '@/hooks/useSwitchFormState'
 
 export const ContactConfirm: React.VFC = () => {
   const { formValues } = useFormValues()
