@@ -1,5 +1,7 @@
 import { css } from '@emotion/react'
-import { IoLogoFacebook, IoLogoGithub } from 'react-icons/io5'
+import { Link as Scroll } from 'react-scroll'
+
+import { iconList, naviList } from './data'
 
 import { fonts } from '@/styles'
 
@@ -10,18 +12,26 @@ export const Header: React.VFC = () => {
         <h1 css={title}>Ryosuke Mizuno</h1>
         <nav css={nav}>
           <ul css={list}>
-            <li>About</li>
-            <li>History</li>
-            <li>Works</li>
-            <li>Contact</li>
+            {naviList.map((item) => (
+              <li key={item.text}>
+                <Scroll
+                  to={item.text.toLowerCase()}
+                  smooth={true}
+                  duration={500}
+                >
+                  {item.text}
+                </Scroll>
+              </li>
+            ))}
           </ul>
           <ul css={list}>
-            <li>
-              <IoLogoFacebook size={30} />
-            </li>
-            <li>
-              <IoLogoGithub size={30} />
-            </li>
+            {iconList.map((icon) => (
+              <li key={icon.name}>
+                <a href={icon.href} target="_blank" rel="noopener noreferrer">
+                  {icon.icon}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
@@ -57,10 +67,21 @@ const list = css`
   display: flex;
   gap: 20px;
 
+  /* メニュー部分（アイコン以外） */
   li {
     display: flex;
     align-items: center;
+    cursor: pointer;
     font-family: ${fonts.libre};
     font-size: 1.5rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* アイコン部分 */
+  a:hover {
+    opacity: 0.8;
   }
 `
