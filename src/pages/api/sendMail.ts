@@ -14,8 +14,9 @@ const sendMail = async (
     if (req.method === 'POST') {
       const data: FormValues = req.body
       const transporter = createTransport({
-        host: 'smtp.mailtrap.io',
-        port: 2525,
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
         auth: {
           user: ADDRESS,
           pass: PASSWORD,
