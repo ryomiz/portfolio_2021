@@ -5,6 +5,7 @@ export type Work = {
   backend: string
   others: string
   url: string
+  repository: string
   image: {
     url: string
   }

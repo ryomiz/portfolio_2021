@@ -6,6 +6,7 @@ import Modal from 'react-responsive-modal'
 import type { Work } from '@/types'
 
 import { useModal } from '@/hooks/useModal'
+import { colors } from '@/styles'
 
 type Props = {
   data: Work
@@ -48,13 +49,18 @@ export const WorkDetailModal: React.VFC<Props> = (props) => {
             <a href={data.url} target="_blank" rel="noopener noreferrer">
               {data.url}
             </a>
-            <a href={data.url} target="_blank" rel="noopener noreferrer">
+            <a href={data.repository} target="_blank" rel="noopener noreferrer">
               <IoLogoGithub size={30} />
             </a>
           </div>
         </div>
         <div css={image}>
-          <Image src={data.image.url} width={420} height={236} alt="Hello" />
+          <Image
+            src={data.image.url}
+            width={800}
+            height={800}
+            alt={data.title}
+          />
         </div>
       </div>
     </Modal>
@@ -66,8 +72,7 @@ const modal = css`
   width: 100%;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 20px;
-  padding-right: 30px;
+  padding: 30px;
 `
 
 const contents = css`
@@ -77,7 +82,7 @@ const contents = css`
 const title = css`
   display: inline-block;
   margin-bottom: 1em;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
 `
 
@@ -124,5 +129,5 @@ const icons = css`
 
 const image = css`
   width: 40%;
-  max-width: 420px;
+  border: 2px solid ${colors.grey};
 `
