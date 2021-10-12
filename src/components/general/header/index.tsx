@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
-import { Link as Scroll } from 'react-scroll'
 
 import { iconList, naviList } from './data'
+import { ScrollItem } from './parts/ScrollItem'
 
 import { fonts } from '@/styles'
 
@@ -14,13 +14,9 @@ export const Header: React.VFC = () => {
           <ul css={list}>
             {naviList.map((item) => (
               <li key={item.text}>
-                <Scroll
-                  to={item.text.toLowerCase()}
-                  smooth={true}
-                  duration={500}
-                >
+                <ScrollItem to={item.text.toLowerCase()}>
                   {item.text}
-                </Scroll>
+                </ScrollItem>
               </li>
             ))}
           </ul>

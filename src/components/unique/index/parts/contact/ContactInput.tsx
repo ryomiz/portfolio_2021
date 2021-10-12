@@ -54,7 +54,9 @@ export const ContactInput: React.VFC = () => {
           )}
         </div>
       </Field>
-      <PrimaryButton type="submit">Confirm</PrimaryButton>
+      <PrimaryButton onClick={() => null} type="submit">
+        Confirm
+      </PrimaryButton>
     </form>
   )
 }

@@ -1,9 +1,10 @@
-import { useFormValues } from '@/hooks/useFormValues'
-import { colors } from '@/styles'
 import { css } from '@emotion/react'
 
-import type { UseFormRegister } from 'react-hook-form'
 import type { FormValues } from '@/types'
+import type { UseFormRegister } from 'react-hook-form'
+
+import { useFormValues } from '@/hooks/useFormValues'
+import { colors } from '@/styles'
 
 type Props = {
   id: 'name' | 'email' | 'message'

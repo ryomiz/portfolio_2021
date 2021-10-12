@@ -16,13 +16,15 @@
     "next": "11.1.2",
     "next-seo": "^4.28.1",
     "nodemailer": "^6.6.3",
+    "party-js": "^2.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "^7.15.3",
     "react-icons": "^4.2.0",
     "react-responsive-modal": "^6.1.0",
     "react-scroll": "^1.8.4",
-    "recoil": "^0.4.1"
+    "recoil": "^0.4.1",
+    "sal.js": "^0.8.5"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.3.0",
