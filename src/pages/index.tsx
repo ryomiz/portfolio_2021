@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { NextSeo } from 'next-seo'
 
 import type { GetStaticProps, NextPage } from 'next'
 
@@ -16,7 +17,15 @@ type Props = {
 
 const HomePage: NextPage<Props> = (props) => {
   const { data } = props
-  return <AssetsIndex data={data} />
+  return (
+    <>
+      <NextSeo
+        title="Ryosuke Mizuno"
+        description="Ryosuke Mizunoのポートフォリオサイト。広島県尾道市在住のマークアップエンジニアで、フロントエンド開発を勉強中。"
+      />
+      <AssetsIndex data={data} />
+    </>
+  )
 }
 
 export default HomePage
