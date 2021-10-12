@@ -68,6 +68,7 @@ const techs = css`
 `
 
 const image = css`
+  max-width: 300px;
   padding-right: 30px;
   padding-bottom: 30px;
 `
