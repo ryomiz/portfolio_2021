@@ -38,8 +38,8 @@ const article = css`
   max-width: 950px;
   flex-direction: column;
   padding: 0 25px;
-  padding-top: 200px;
-  padding-bottom: 120px;
+  padding-top: 140px;
+  padding-bottom: 200px;
   margin: 0 auto;
-  gap: 160px;
+  gap: 100px;
 `

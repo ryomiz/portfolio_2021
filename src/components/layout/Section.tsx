@@ -8,12 +8,16 @@ type Props = {
 export const Section: React.FC<Props> = (props) => {
   const { title, children } = props
   return (
-    <section>
+    <section id={title.toLowerCase()} css={section}>
       <h2 css={headline}>{title}</h2>
       {children}
     </section>
   )
 }
+
+const section = css`
+  padding-top: 60px;
+`
 
 const headline = css`
   margin-bottom: 60px;
