@@ -6,17 +6,12 @@ type Props = {
   children: React.ReactNode
   type?: 'button' | 'submit' | 'reset' | undefined
   active?: boolean
-  onClick?: any
+  onClick: React.MouseEventHandler<HTMLButtonElement>
 }
 export const PrimaryButton: React.VFC<Props> = (props) => {
   const { children, type = 'button', active = false, onClick } = props
   return (
-    <button
-      css={submit}
-      type={type}
-      data-active={active}
-      onClick={onClick && onClick}
-    >
+    <button css={submit} type={type} data-active={active} onClick={onClick}>
       {children}
     </button>
   )
