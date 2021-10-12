@@ -22,7 +22,8 @@
     "react-icons": "^4.2.0",
     "react-responsive-modal": "^6.1.0",
     "react-scroll": "^1.8.4",
-    "recoil": "^0.4.1"
+    "recoil": "^0.4.1",
+    "sal.js": "^0.8.5"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.3.0",
