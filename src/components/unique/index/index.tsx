@@ -41,5 +41,5 @@ const article = css`
   padding-top: 200px;
   padding-bottom: 120px;
   margin: 0 auto;
-  gap: 240px;
+  gap: 160px;
 `

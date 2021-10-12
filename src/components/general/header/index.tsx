@@ -17,10 +17,10 @@ export const Header: React.VFC = () => {
           </ul>
           <ul css={list}>
             <li>
-              <IoLogoFacebook size={20} />
+              <IoLogoFacebook size={30} />
             </li>
             <li>
-              <IoLogoGithub size={20} />
+              <IoLogoGithub size={30} />
             </li>
           </ul>
         </nav>
