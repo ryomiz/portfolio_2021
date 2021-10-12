@@ -40,6 +40,6 @@ export const SectionWorks: React.VFC<Props> = (props) => {
 
 const grid = css`
   display: grid;
-  gap: 60px;
+  gap: 40px;
   grid-template-columns: repeat(2, 1fr);
 `

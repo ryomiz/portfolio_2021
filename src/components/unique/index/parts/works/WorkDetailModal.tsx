@@ -131,6 +131,7 @@ const icons = css`
 `
 
 const image = css`
+  display: flex;
   width: 40%;
   border: 2px solid ${colors.grey};
 `
