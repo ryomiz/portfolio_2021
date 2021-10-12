@@ -1,10 +1,10 @@
-import axios from 'axios'
 import { NextSeo } from 'next-seo'
 
 import type { GetStaticProps, NextPage } from 'next'
 
 import { AssetsIndex } from '@/components/unique/index'
 import { Work } from '@/types'
+import { axiosInstance } from '@/utils/axiosInstance'
 import { getWorksQuery } from '@/utils/query'
 
 type Props = {
@@ -32,13 +32,10 @@ export default HomePage
 
 // GetStaticProps
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await axios({
-    url: 'https://api-ap-northeast-1.graphcms.com/v2/cktsrakyp08hf01xpgte012py/master',
-    method: 'POST',
-    data: {
-      query: getWorksQuery,
-    },
+  const res = await axiosInstance().post('', {
+    query: getWorksQuery,
   })
+
   const data = res.data
   return {
     props: { data },
