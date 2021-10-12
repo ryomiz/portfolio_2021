@@ -1,23 +1,21 @@
 import { css } from '@emotion/react'
 import Image from 'next/image'
-import { useState } from 'react'
+
+import { WorkDetailModal } from './WorkDetailModal'
 
 import type { Work } from '@/types'
 
-import { MyModal } from '@/components/general/modal/MyModal'
+import { useModal } from '@/hooks/useModal'
 
 type Props = {
   data: Work
 }
 
 export const WorkItem: React.VFC<Props> = (props) => {
-  const {
-    data: { title, image },
-  } = props
-
-  const [open, setOpen] = useState<boolean>(false)
-  const openModal = () => setOpen(true)
-  const closeModal = () => setOpen(false)
+  const { data } = props
+  const { title, image } = data
+  const { openModal } = useModal()
+  console.log(data)
 
   return (
     <>
@@ -28,7 +26,7 @@ export const WorkItem: React.VFC<Props> = (props) => {
         </div>
         <Image src={image.url} width={420} height={236} alt={title} />
       </div>
-      <MyModal open={open} closeModal={closeModal} />
+      <WorkDetailModal data={data} />
     </>
   )
 }

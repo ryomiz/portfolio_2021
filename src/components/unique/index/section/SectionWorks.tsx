@@ -12,21 +12,12 @@ type Props = {
   }
 }
 
-const works = [
-  {
-    title: 'My Portfolio',
-    image: {
-      url: 'https://media.graphcms.com/CHgzbh0sQIa17tzapHSe',
-    },
-  },
-]
-
 export const SectionWorks: React.VFC<Props> = (props) => {
-  // const {
-  //   data: {
-  //     data: { works },
-  //   },
-  // } = props
+  const {
+    data: {
+      data: { works },
+    },
+  } = props
   return (
     <Section title="Works">
       <div css={grid}>

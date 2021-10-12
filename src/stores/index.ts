@@ -15,3 +15,8 @@ export const confirmValueState = atom<FormValues>({
     message: '',
   },
 })
+
+export const modalState = atom<boolean>({
+  key: 'modalState',
+  default: false,
+})

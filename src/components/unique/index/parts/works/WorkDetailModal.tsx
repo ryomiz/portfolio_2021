@@ -2,13 +2,19 @@ import { css } from '@emotion/react'
 import Image from 'next/image'
 import { IoLogoGithub } from 'react-icons/io5'
 import Modal from 'react-responsive-modal'
+
+import type { Work } from '@/types'
+
+import { useModal } from '@/hooks/useModal'
+
 type Props = {
-  open: boolean
-  closeModal: () => void
+  data: Work
 }
 
-export const MyModal: React.VFC<Props> = (props) => {
-  const { open, closeModal } = props
+export const WorkDetailModal: React.VFC<Props> = (props) => {
+  const { data } = props
+  console.log(data)
+  const { open, closeModal } = useModal()
   return (
     <Modal
       open={open}
@@ -20,46 +26,35 @@ export const MyModal: React.VFC<Props> = (props) => {
     >
       <div css={modal}>
         <div css={contents}>
-          <strong css={title}>My Portfolio</strong>
-          <p css={description}>
-            ポートフォリオです。
-            <br />
-            ポートフォリオです。
-            <br />
-            ポートフォリオです。
-          </p>
+          <strong css={title}>{data.title}</strong>
+          <p css={description}>{data.description}</p>
           <h4 css={techs}>使用技術</h4>
           <dl css={list}>
             <div className="flex">
               <dt>フロントエンド</dt>
-              <dd>TypeScript, Next.js</dd>
+              <dd>{data.frontend}</dd>
             </div>
             <div className="flex">
               <dt>バックエンド</dt>
-              <dd>GraphCMS</dd>
+              <dd>{data.backend}</dd>
             </div>
             <div className="flex">
               <dt>その他</dt>
-              <dd>Node.js, GraphQL</dd>
+              <dd>{data.others}</dd>
             </div>
           </dl>
           <h4 css={link}>URL</h4>
           <div css={icons}>
-            <a href="#" target="_blank" rel="noopener">
-              http://localhost:3000/
+            <a href={data.url} target="_blank" rel="noopener noreferrer">
+              {data.url}
             </a>
-            <a href="#" target="_blank" rel="noopener">
+            <a href={data.url} target="_blank" rel="noopener noreferrer">
               <IoLogoGithub size={30} />
             </a>
           </div>
         </div>
         <div css={image}>
-          <Image
-            src="https://media.graphcms.com/CHgzbh0sQIa17tzapHSe"
-            width={420}
-            height={236}
-            alt="Hello"
-          />
+          <Image src={data.image.url} width={420} height={236} alt="Hello" />
         </div>
       </div>
     </Modal>
@@ -88,6 +83,7 @@ const title = css`
 
 const description = css`
   margin-bottom: 2em;
+  white-space: pre-line;
 `
 
 const techs = css`
@@ -119,6 +115,10 @@ const icons = css`
 
   a {
     display: flex;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 `
 
