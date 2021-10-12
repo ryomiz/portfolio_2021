@@ -1,11 +1,15 @@
 import { css } from '@emotion/react'
 
+// import { useParty } from '@/hooks/useParty'
+
 type Props = {
   success: boolean
 }
 
 export const ContactSubmitResult: React.VFC<Props> = (props) => {
   const { success } = props
+
+  // useParty(success)
   return (
     <div css={container}>
       {success ? (
