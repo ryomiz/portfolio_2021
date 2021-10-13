@@ -4,6 +4,7 @@ import Image from 'next/image'
 import type { Work } from '@/types'
 
 import { useModal } from '@/hooks/useModal'
+import { breakpoints } from '@/styles'
 
 type Props = {
   data: Work
@@ -56,11 +57,19 @@ const description = css`
   align-items: flex-end;
   justify-content: space-between;
   order: 2;
-  padding: 2em 2em 1.5em;
+  padding: 1em 2em;
+
+  @media (min-width: ${breakpoints.md}) {
+    padding: 2em 2em 1.5em;
+  }
 `
 
 const workTitle = css`
-  font-size: 2rem;
+  font-size: 1.8rem;
+
+  @media (min-width: ${breakpoints.md}) {
+    font-size: 2rem;
+  }
 `
 
 const detail = css`

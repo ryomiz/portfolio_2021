@@ -1,7 +1,8 @@
 import { css } from '@emotion/react'
-import Image from 'next/image'
 
+import { Photo } from '@/components/general/Photo/Photo'
 import { Section } from '@/components/layout/Section'
+import { breakpoints } from '@/styles'
 import profile from 'public/images/profile.jpg'
 
 export const SectionAbout: React.VFC = () => {
@@ -10,7 +11,11 @@ export const SectionAbout: React.VFC = () => {
       <div css={container}>
         <div css={contents}>
           <div>
-            <h3 css={myname}>水野 良祐&#040;Mizuno Ryosuke&#041;</h3>
+            <h3 css={myname}>
+              <span className="inline-block">水野 良祐</span>
+              <span className="inline-block">&#040;Mizuno Ryosuke&#041;</span>
+            </h3>
+
             <p css={greeting}>
               広島県尾道市在住のマークアップエンジニア
               <br />
@@ -20,16 +25,14 @@ export const SectionAbout: React.VFC = () => {
           <div>
             <h3 css={using}>学習中の技術</h3>
             <ul css={techs}>
-              <li>JavaScript, TypeScript, React, Next.js,</li>
+              <li>JavaScript, TypeScript, React, Next.js</li>
               <li>Node.js, Express.js, Nest.js</li>
               <li>GraphQL</li>
             </ul>
           </div>
         </div>
         <div css={image}>
-          <div css={image_inner}>
-            <Image src={profile} placeholder="blur" alt="プロフィール写真" />
-          </div>
+          <Photo src={profile} alt="プロフィール写真" />
         </div>
       </div>
     </Section>
@@ -38,27 +41,50 @@ export const SectionAbout: React.VFC = () => {
 
 const container = css`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+
+  @media (min-width: ${breakpoints.md}) {
+    flex-direction: row;
+  }
 `
 
 const contents = css`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  order: 2;
+
+  @media (min-width: ${breakpoints.md}) {
+    order: 1;
+  }
 `
 
 const myname = css`
-  margin-bottom: 16px;
-  font-size: 2.4rem;
+  margin-bottom: 0.3em;
+  font-size: 2rem;
+
+  @media (min-width: ${breakpoints.md}) {
+    font-size: 2.4rem;
+  }
 `
 
 const greeting = css`
+  margin-bottom: 3em;
   line-height: 2;
+
+  @media (min-width: ${breakpoints.md}) {
+    margin-bottom: 0;
+  }
 `
 
 const using = css`
-  margin-bottom: 6px;
-  font-size: 2rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.8rem;
+
+  @media (min-width: ${breakpoints.md}) {
+    font-size: 2rem;
+  }
 `
 
 const techs = css`
@@ -68,12 +94,11 @@ const techs = css`
 `
 
 const image = css`
-  max-width: 300px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-`
+  max-width: 350px;
+  order: 1;
 
-const image_inner = css`
-  display: flex;
-  box-shadow: 30px 30px #ddd;
+  @media (min-width: ${breakpoints.md}) {
+    max-width: 300px;
+    order: 2;
+  }
 `

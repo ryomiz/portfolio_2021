@@ -1,7 +1,8 @@
 import { css } from '@emotion/react'
-import Image from 'next/image'
 
+import { Photo } from '@/components/general/Photo/Photo'
 import { Section } from '@/components/layout/Section'
+import { breakpoints } from '@/styles'
 import history from 'public/images/history.jpg'
 
 export const SectionHistory: React.VFC = () => {
@@ -30,9 +31,7 @@ export const SectionHistory: React.VFC = () => {
           </li>
         </ul>
         <div css={image}>
-          <div css={image_inner}>
-            <Image src={history} placeholder="blur" alt="北海道大学" />
-          </div>
+          <Photo src={history} alt="北海道大学に咲く林檎" />
         </div>
       </div>
     </Section>
@@ -41,9 +40,14 @@ export const SectionHistory: React.VFC = () => {
 
 const container = css`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 100px;
+
+  @media (min-width: ${breakpoints.md}) {
+    flex-direction: row;
+    gap: 100px;
+  }
 `
 
 const list = css`
@@ -52,10 +56,21 @@ const list = css`
 
   li {
     margin-bottom: 16px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    li {
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 `
@@ -63,18 +78,20 @@ const list = css`
 const year = css`
   display: inline-block;
   width: 60px;
-  margin-right: 20px;
+  margin-right: 10px;
   font-size: 1.3rem;
   text-align: right;
+
+  @media (min-width: ${breakpoints.md}) {
+    margin-right: 20px;
+  }
 `
 
 const image = css`
+  max-width: 350px;
   order: 1;
-  padding-right: 30px;
-  padding-bottom: 30px;
-`
 
-const image_inner = css`
-  display: flex;
-  box-shadow: 30px 30px #ddd;
+  @media (min-width: ${breakpoints.md}) {
+    max-width: 300px;
+  }
 `

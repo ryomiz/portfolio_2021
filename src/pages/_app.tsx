@@ -5,6 +5,7 @@ import sal from 'sal.js'
 // Reset css
 import 'ress'
 import '@/styles/globals.css'
+import '@/styles/helper.css'
 import '@/styles/vendors.css'
 
 // vendors

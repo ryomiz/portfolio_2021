@@ -2,7 +2,6 @@ import { memo } from 'react'
 
 import { Footer } from '../general/footer'
 import { Header } from '../general/header'
-
 type Props = {
   children: React.ReactNode
 }

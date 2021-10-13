@@ -25,7 +25,6 @@ export const SectionContact: React.VFC = () => {
 }
 
 const container = css`
-  max-width: 650px;
-  padding: 0 25px;
+  max-width: 500px;
   margin: 0 auto;
 `

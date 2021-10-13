@@ -5,13 +5,16 @@ html {
   letter-spacing: 0.1em;
 }
 
-ul {
-  list-style: none;
+body {
+  background-image: url('../../public/images/bg_torii.svg');
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 220px;
+  font-size: 1.4rem;
 }
 
-ul,
-p {
-  font-size: 1.6rem;
+ul {
+  list-style: none;
 }
 
 a {
@@ -32,6 +35,10 @@ img {
   height: auto;
 }
 
-.flex {
-  display: flex;
+@media (min-width: 768px) {
+  body {
+    background-position: 2% 100%;
+    background-size: 400px;
+    font-size: 1.6rem;
+  }
 }
