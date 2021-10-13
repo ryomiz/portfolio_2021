@@ -26,7 +26,7 @@ export const Section: React.FC<Props> = (props) => {
 }
 
 const section = css`
-  padding-top: 30px;
+  padding-top: 80px;
 
   @media (min-width: ${breakpoints.md}) {
     padding-top: 60px;

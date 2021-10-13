@@ -39,14 +39,13 @@ const article = css`
   max-width: 400px;
   flex-direction: column;
   padding: 0 25px;
-  padding-top: 60px;
-  padding-bottom: 120px;
+  padding-bottom: 160px;
   margin: 0 auto;
-  gap: 70px;
+  gap: 20px;
 
   @media (min-width: ${breakpoints.md}) {
     max-width: 950px;
-    padding-top: 140px;
+    padding-top: 40px;
     padding-bottom: 200px;
     gap: 100px;
   }
