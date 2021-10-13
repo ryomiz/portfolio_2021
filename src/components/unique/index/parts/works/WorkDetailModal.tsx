@@ -5,6 +5,7 @@ import Modal from 'react-responsive-modal'
 
 import type { Work } from '@/types'
 
+import { Icon } from '@/components/general/icons/Icon'
 import { useModal } from '@/hooks/useModal'
 import { breakpoints, colors } from '@/styles'
 
@@ -53,7 +54,7 @@ export const WorkDetailModal: React.VFC<Props> = (props) => {
               {data.url}
             </a>
             <a href={data.repository} target="_blank" rel="noopener noreferrer">
-              <IoLogoGithub size={30} />
+              <Icon Icon={IoLogoGithub} />
             </a>
           </div>
         </div>
