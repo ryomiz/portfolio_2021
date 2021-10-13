@@ -6,6 +6,10 @@ html {
 }
 
 body {
+  background-image: url('../../public/images/bg_torii.svg');
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 220px;
   font-size: 1.4rem;
 }
 
@@ -33,6 +37,8 @@ img {
 
 @media (min-width: 768px) {
   body {
+    background-position: 2% 100%;
+    background-size: 400px;
     font-size: 1.6rem;
   }
 }
