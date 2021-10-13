@@ -5,6 +5,7 @@ import { WorkDetailModal } from '../parts/works/WorkDetailModal'
 import { Section } from '@/components/layout/Section'
 import { WorkItem } from '@/components/unique/index/parts/works/WorkItem'
 import { useModal } from '@/hooks/useModal'
+import { breakpoints } from '@/styles'
 import { Work } from '@/types'
 
 type Props = {
@@ -41,5 +42,8 @@ export const SectionWorks: React.VFC<Props> = (props) => {
 const grid = css`
   display: grid;
   gap: 40px;
-  grid-template-columns: repeat(2, 1fr);
+
+  @media (min-width: ${breakpoints.md}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `

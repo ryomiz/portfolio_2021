@@ -7,6 +7,7 @@ import { SectionAbout } from '@/components/unique/index/section/SectionAbout'
 import { SectionContact } from '@/components/unique/index/section/SectionContact'
 import { SectionHistory } from '@/components/unique/index/section/SectionHistory'
 import { SectionWorks } from '@/components/unique/index/section/SectionWorks'
+import { breakpoints } from '@/styles'
 
 type Props = {
   data: {
@@ -35,11 +36,18 @@ export const AssetsIndex: React.VFC<Props> = (props) => {
 }
 const article = css`
   display: flex;
-  max-width: 950px;
+  max-width: 400px;
   flex-direction: column;
   padding: 0 25px;
-  padding-top: 140px;
-  padding-bottom: 200px;
+  padding-top: 60px;
+  padding-bottom: 120px;
   margin: 0 auto;
-  gap: 100px;
+  gap: 70px;
+
+  @media (min-width: ${breakpoints.md}) {
+    max-width: 950px;
+    padding-top: 140px;
+    padding-bottom: 200px;
+    gap: 100px;
+  }
 `

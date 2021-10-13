@@ -5,13 +5,12 @@ html {
   letter-spacing: 0.1em;
 }
 
-ul {
-  list-style: none;
+body {
+  font-size: 1.4rem;
 }
 
-ul,
-p {
-  font-size: 1.6rem;
+ul {
+  list-style: none;
 }
 
 a {
@@ -32,6 +31,8 @@ img {
   height: auto;
 }
 
-.flex {
-  display: flex;
+@media (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
 }

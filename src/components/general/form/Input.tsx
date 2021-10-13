@@ -21,7 +21,7 @@ export const Input: React.VFC<Props> = (props) => {
         id={id}
         defaultValue={formValues[id]}
         {...register(id, { required: true })}
-        css={input}
+        css={textarea}
       />
     )
   }
@@ -40,7 +40,7 @@ export const Input: React.VFC<Props> = (props) => {
 
 const input = css`
   width: 100%;
-  padding: 0.8rem 1rem;
+  padding: 0.5em 0.7em;
   border: 1px solid ${colors.grey};
   border-radius: 5px;
   font-size: 1.4rem;
@@ -49,4 +49,14 @@ const input = css`
   &[data-textarea='true'] {
     min-height: 7.2rem;
   }
+`
+
+const textarea = css`
+  width: 100%;
+  min-height: 5.4em;
+  padding: 0.5em 0.7em;
+  border: 1px solid ${colors.grey};
+  border-radius: 5px;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
 `
