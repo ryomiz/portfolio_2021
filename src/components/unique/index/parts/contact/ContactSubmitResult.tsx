@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-// import { useParty } from '@/hooks/useParty'
+import { useParty } from '@/hooks/useParty'
 
 type Props = {
   success: boolean
@@ -9,7 +9,7 @@ type Props = {
 export const ContactSubmitResult: React.VFC<Props> = (props) => {
   const { success } = props
 
-  // useParty(success)
+  useParty(success)
   return (
     <div css={container}>
       {success ? (
