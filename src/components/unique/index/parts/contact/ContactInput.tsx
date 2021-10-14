@@ -32,23 +32,37 @@ export const ContactInput: React.VFC = () => {
       <Field>
         <div>
           <Label htmlFor="name">Name</Label>
-          <Input id="name" type="text" register={register} />
-          {errors.name ? <ErrorMessage error={errors} /> : <div css={spacer} />}
+          <Input id="name" type="text" label="名前" register={register} />
+          {errors.name ? (
+            <ErrorMessage error={errors.name} />
+          ) : (
+            <div css={spacer} />
+          )}
         </div>
         <div>
           <Label htmlFor="email">Email</Label>
-          <Input id="email" type="text" register={register} />
+          <Input
+            id="email"
+            type="text"
+            label="メールアドレス"
+            register={register}
+          />
           {errors.email ? (
-            <ErrorMessage error={errors} />
+            <ErrorMessage error={errors.email} />
           ) : (
             <div css={spacer} />
           )}
         </div>
         <div>
           <Label htmlFor="message">Message</Label>
-          <Input id="message" type="text" register={register} />
+          <Input
+            id="message"
+            type="text"
+            label="メッセージ"
+            register={register}
+          />
           {errors.message ? (
-            <ErrorMessage error={errors} />
+            <ErrorMessage error={errors.message} />
           ) : (
             <div css={spacer} />
           )}

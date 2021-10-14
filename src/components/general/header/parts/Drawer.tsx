@@ -6,7 +6,12 @@ import { ScrollItem } from '../parts/ScrollItem'
 
 export const Drawer: React.VFC = () => {
   return (
-    <Menu right={true} itemListElement="nav">
+    <Menu
+      right={true}
+      itemListElement="nav"
+      itemClassName="mydrawer"
+      burgerButtonClassName="mybuttton"
+    >
       <ul css={navi}>
         {naviList.map((item) => (
           <li key={item.text}>
@@ -33,9 +38,14 @@ const navi = css`
 
   li {
     margin-bottom: 1em;
+    cursor: pointer;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    &:hover {
+      color: #fff;
     }
   }
 `
@@ -44,5 +54,13 @@ const icons = css`
   li {
     display: inline-block;
     margin-right: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: #fff;
+    }
   }
 `
