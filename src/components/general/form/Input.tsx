@@ -9,18 +9,20 @@ import { colors } from '@/styles'
 type Props = {
   id: 'name' | 'email' | 'message'
   type: 'text'
+  label: '名前' | 'メールアドレス' | 'メッセージ'
   register: UseFormRegister<FormValues>
 }
 
 export const Input: React.VFC<Props> = (props) => {
   const { formValues } = useFormValues()
-  const { id, type, register } = props
+  const { id, type, label, register } = props
+
   if (id === 'message') {
     return (
       <textarea
         id={id}
         defaultValue={formValues[id]}
-        {...register(id, { required: true })}
+        {...register(id, { required: label })}
         css={textarea}
       />
     )
@@ -31,7 +33,7 @@ export const Input: React.VFC<Props> = (props) => {
         id={id}
         type={type}
         defaultValue={formValues[id]}
-        {...register(id, { required: true })}
+        {...register(id, { required: label })}
         css={input}
       />
     </>
