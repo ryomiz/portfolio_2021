@@ -4,6 +4,14 @@
 
 /* react-burger-menu */
 
+/* PC画面では非表示 */
+@media (min-width: 768px) {
+  .mydrawer,
+  .bm-burger-button {
+    display: none;
+  }
+}
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;

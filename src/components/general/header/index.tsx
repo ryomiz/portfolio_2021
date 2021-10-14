@@ -1,5 +1,4 @@
 import { css } from '@emotion/react'
-import { useMediaQuery } from 'react-responsive'
 
 import { iconList, naviList } from './data'
 import { Drawer } from './parts/Drawer'
@@ -8,13 +7,10 @@ import { ScrollItem } from './parts/ScrollItem'
 import { breakpoints, fonts } from '@/styles'
 
 export const Header: React.VFC = () => {
-  const medium = useMediaQuery({
-    query: `(min-width: ${breakpoints.md})`,
-  })
   return (
     <header css={header}>
-      {/* スマホ時のみドロワーメニューを表示 */}
-      {!medium && <Drawer />}
+      {/* PC時ではドロワーは非表示になるようスタイルを当ててあります */}
+      <Drawer />
 
       <div css={inner}>
         <h1 css={title}>Ryosuke Mizuno</h1>

@@ -6,7 +6,12 @@ import { ScrollItem } from '../parts/ScrollItem'
 
 export const Drawer: React.VFC = () => {
   return (
-    <Menu right={true} itemListElement="nav">
+    <Menu
+      right={true}
+      itemListElement="nav"
+      itemClassName="mydrawer"
+      burgerButtonClassName="mybuttton"
+    >
       <ul css={navi}>
         {naviList.map((item) => (
           <li key={item.text}>
