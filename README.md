@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ryosuke Mizuno
 
-## Getting Started
+水野良祐のポートフォリオサイトです。  
+広島県尾道市在住、マークアップエンジニアとして勤務しています。（2021 年 10 月現在）
 
-First, run the development server:
+## 私の経歴
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1996 年 広島県広島市にて生まれる  
+2015 年 広島学院高等学校 卒業  
+同年 北海道大学総合教育部 入学  
+2016 年 北海道大学農学部生物資源化学科 進学  
+2019 年 北海道大学農学部生物資源化学科 卒業  
+同年 北海道大学大学院農学院 進学  
+2021 年 北海道大学大学院農学院 中退  
+同年 マークアップエンジニアとして勤務開始
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## このポートフォリオの特徴
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+・フロントエンドは TypeScript × Next.js で開発しており、Vercel にホスティングしています。  
+・バックエンドには GraphCMS という、GraphQL 対応の CMS を使用しています。  
+・Next.js の API Route, Vercel の Serverless Functions を使用してお問い合せフォームを実装しています。
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+----- 使用した技術 -----
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+エディター: Visual Studio Code  
+開発言語: TypeScript  
+フレームワーク: Next.js  
+スタイリング: Emotion  
+静的解析ツール: Eslint, Prettier, Stylelint  
+その他: GraphQL
