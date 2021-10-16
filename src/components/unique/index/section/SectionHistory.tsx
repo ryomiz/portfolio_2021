@@ -14,7 +14,10 @@ export const SectionHistory: React.VFC = () => {
             <span css={year}>1996年</span>広島県広島市にて生まれる
           </li>
           <li>
-            <span css={year}>2015年</span>北海道大学農学部生物資源化学科 入学
+            <span css={year}>2015年</span>北海道大学総合教育部 入学
+          </li>
+          <li>
+            <span css={year}>2016年</span>北海道大学農学部生物資源化学科 進学
           </li>
           <li>
             <span css={year}>2019年</span>北海道大学生物資源化学化学科 卒業
